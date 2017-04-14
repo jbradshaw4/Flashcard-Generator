@@ -27,3 +27,26 @@ var clozeAnswer = [
     "Indiana Jones and the Temple of Doom",
     "That's one small step for a man, one giant leap for mankind"
 ]
+
+var myFlash = new weatherAdmin();
+
+if (loginType === "basic") {
+
+  myAdmin.getData();
+
+}
+
+else {
+
+  myAdmin.newUserSearch(userName, userLocation);
+
+}
+
+
+
+
+
+
+
+
+
