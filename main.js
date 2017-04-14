@@ -4,49 +4,50 @@ var BasicCard = require('./cardBasic.js');
 
 var ClozeCard = require('./cardCloze.js');
 
-var front = [
-    "Who was the first President of the United States",
-    "What movie prompted censorship boards to enact PG13",
-    "To be grammatically correct- Neil Armstrong should have said"
-]
+var fs = require('fs');
 
-var back = [
-    "George Washington",
-    "Indiana Jones and the Temple of Doom",
-    "That's one small step for a man, one giant leap for mankind"
-]
+var questionsJson = require('./questions.json');
 
-var clozeQuestion = [
-    "...was the first President of the United States",
-    "...was the movie that prompted censorship boards to enact PG13",
-    "That's one small step for man, one giant leap for mankind should be- ..."
-]
+var clozeJson = require('./clozejson.json');
 
-var clozeAnswer = [
-    "George Washington",
-    "Indiana Jones and the Temple of Doom",
-    "That's one small step for a man, one giant leap for mankind"
-]
+startGame();
 
-var myFlash = new weatherAdmin();
+function startGame() {
+    var index = 0;
+    if (index < questionsJson.length) {
+        for (var i = 0; i < questionsJson.length; i++) {
+            var currentCard = new BasicCard(questionsJson[i].front, questionsJson[i].back)
+        } 
 
-if (loginType === "basic") {
-
-  myAdmin.getData();
-
+    } 
+    
 }
 
-else {
 
-  myAdmin.newUserSearch(userName, userLocation);
+BasicCard.prototype.showBasic = function() {
+    console.log("Front: " + this.front);
+    console.log("Back: " + this.back);
+}
 
+
+ClozeCard.prototype.showBasic = function() {
+    console.log("ClozeQuestion: " + this.clozeQuestion);
+    console.log("ClozeAnswer: " + this.clozeAnswer);
 }
 
 
 
+function basicQuestion() {
 
+    this.getData = function() {
+        fs.readFile('questions.json', "utf8", function(err, data) {
+            if (err) {
+                throw err;
+            }
+            console.log(data);
 
-
-
-
-
+            var dataArr = data.split(",");
+            console.log(dataArr);
+        })
+    }
+}

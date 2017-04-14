@@ -1,0 +1,13 @@
+[{
+        "clozeQuestion": "...was the first President of the United States",
+        "clozeAnswer": "George Washington"
+    },
+
+    {
+        "clozeQuestion": "...was the movie that prompted censorship boards to enact PG13",
+        "clozeAnswer": "Indiana Jones and the Temple of Doom"
+    }, {
+        "clozeQuestion": "That's one small step for man, one giant leap for mankind should be- ...",
+        "clozeAnswer": "That's one small step for a man, one giant leap for mankind"
+    }
+]
