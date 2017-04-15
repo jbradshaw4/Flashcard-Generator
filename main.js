@@ -13,14 +13,27 @@ var clozeJson = require('./clozejson.json');
 startGame();
 
 function startGame() {
+    var basicBank=[];
+
     var index = 0;
     if (index < questionsJson.length) {
         for (var i = 0; i < questionsJson.length; i++) {
-            var currentCard = new BasicCard(questionsJson[i].front, questionsJson[i].back)
-        } 
+            var currentCard = new BasicCard(questionsJson[i].front, questionsJson[i].back);
+            basicBank.push(currentCard);
+               
+        }
+console.log(basicBank);
 
-    } 
-    
+    }
+
+}
+
+function showBasic (){
+    //inquire package
+    inquirer.prompt([{""}]).then(function(answers){
+
+
+    })
 }
 
 
@@ -37,17 +50,3 @@ ClozeCard.prototype.showBasic = function() {
 
 
 
-function basicQuestion() {
-
-    this.getData = function() {
-        fs.readFile('questions.json', "utf8", function(err, data) {
-            if (err) {
-                throw err;
-            }
-            console.log(data);
-
-            var dataArr = data.split(",");
-            console.log(dataArr);
-        })
-    }
-}
