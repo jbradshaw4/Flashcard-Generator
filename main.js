@@ -12,25 +12,35 @@ var clozeJson = require('./clozejson.json');
 
 startGame();
 
+showBasic();
+
 function startGame() {
-    var basicBank=[];
+    var basicBank = []; //empty array which has questions from for loop pushed
 
     var index = 0;
     if (index < questionsJson.length) {
         for (var i = 0; i < questionsJson.length; i++) {
             var currentCard = new BasicCard(questionsJson[i].front, questionsJson[i].back);
             basicBank.push(currentCard);
-               
-        }
-console.log(basicBank);
+
+        } //this for loop- iterates through the questions.json and pushes them into the basicBank
+        console.log(basicBank);
 
     }
 
 }
 
-function showBasic (){
-    //inquire package
-    inquirer.prompt([{""}]).then(function(answers){
+function showBasic() {
+    console.log('')
+    inquirer.prompt([{
+        type: "list",
+        message: "Select Test Type you want:",
+        choices: ["Basic", "Cloze"],
+        name: "cardType"
+
+
+    }]).then(function(answers) {
+        //if cardType === Cloze etc
 
 
     })
@@ -47,6 +57,3 @@ ClozeCard.prototype.showBasic = function() {
     console.log("ClozeQuestion: " + this.clozeQuestion);
     console.log("ClozeAnswer: " + this.clozeAnswer);
 }
-
-
-

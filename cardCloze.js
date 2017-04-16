@@ -3,8 +3,8 @@ var ClozeCard = function(clozeQuestion, clozeAnswer) {
         return new BasicCard(front, back);
     }
 
-    this.front = front;
-    this.back = back;
+    this.clozeQuestion = clozeQuestion;
+    this.clozeAnswer = clozeAnswer;
 
 
 }
